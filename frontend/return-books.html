@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Books | Library Management System</title>
+    <link rel="stylesheet" href="css/return-books.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>LibManager</h2>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="books.html">Books</a>
+            <a href="members.html">Members</a>
+            <a href="issue-books.html">Issue Books</a>
+            <a href="return-books.html" class="active">Return Books</a>
+            <a href="#">Transactions</a>
+            <a href="#">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Return Books</h1>
+                <p>Manage returned library books</p>
+            </div>
+
+            <span class="user-label">Librarian</span>
+        </header>
+
+        <section class="content">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Active Issues</h2>
+                    <p>Books currently borrowed by members.</p>
+                </div>
+
+                <button id="refreshButton">Refresh Records</button>
+            </div>
+
+            <div id="message" class="message" aria-live="polite"></div>
+
+            <div class="table-card">
+
+                <div class="table-header">
+                    <h2>Books to Be Returned</h2>
+                    <span id="issueCount">Loading...</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue ID</th>
+                                <th>Book Title</th>
+                                <th>Member Name</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="issuesTableBody">
+                            <tr>
+                                <td colspan="6">Loading records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/return-books.js"></script>
+</body>
+</html>

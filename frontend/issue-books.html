@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Books | Library Management System</title>
+    <link rel="stylesheet" href="css/issue-books.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>LibManager</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="books.html">Books</a>
+            <a href="members.html">Members</a>
+            <a href="issue-books.html" class="active">Issue Books</a>
+            <a href="#">Return Books</a>
+            <a href="#">Transactions</a>
+            <a href="#">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Issue Books</h1>
+                <p>Issue books to registered library members</p>
+            </div>
+            <span class="user-label">Librarian</span>
+        </header>
+
+        <section class="content">
+
+            <div class="form-card">
+                <h2>New Book Issue</h2>
+
+                <form id="issueForm">
+
+                    <div class="form-grid">
+
+                        <div>
+                            <label for="bookId">Select Book *</label>
+                            <select id="bookId" required>
+                                <option value="">Loading books...</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="memberId">Select Member *</label>
+                            <select id="memberId" required>
+                                <option value="">Loading members...</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="dueDate">Due Date *</label>
+                            <input type="date" id="dueDate" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="issueButton">
+                            Issue Book
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="message" class="message" aria-live="polite"></div>
+
+            <div class="table-card">
+                <div class="table-header">
+                    <h2>Currently Issued Books</h2>
+                    <span id="issueCount">Loading...</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue ID</th>
+                                <th>Book Title</th>
+                                <th>Member Name</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="issuesTableBody">
+                            <tr>
+                                <td colspan="5">Loading issued books...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/issue-books.js"></script>
+</body>
+</html>

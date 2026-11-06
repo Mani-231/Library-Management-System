@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions | Library Management System</title>
+    <link rel="stylesheet" href="css/transactions.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>LibManager</h2>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="books.html">Books</a>
+            <a href="members.html">Members</a>
+            <a href="issue-books.html">Issue Books</a>
+            <a href="return-books.html">Return Books</a>
+            <a href="transactions.html" class="active">Transactions</a>
+            <a href="#">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Transactions</h1>
+                <p>Complete book issue and return history</p>
+            </div>
+
+            <span class="user-label">Librarian</span>
+        </header>
+
+        <section class="content">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Transaction History</h2>
+                    <p>View all library borrowing records.</p>
+                </div>
+
+                <button id="refreshButton">Refresh Records</button>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <p>Total Transactions</p>
+                    <h2 id="totalTransactions">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Currently Issued</p>
+                    <h2 id="issuedTransactions">0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Returned Books</p>
+                    <h2 id="returnedTransactions">0</h2>
+                </div>
+            </div>
+
+            <div id="message" class="message" aria-live="polite"></div>
+
+            <div class="table-card">
+
+                <div class="table-header">
+                    <h2>All Transactions</h2>
+                    <span id="transactionCount">Loading...</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue ID</th>
+                                <th>Book</th>
+                                <th>Member</th>
+                                <th>Librarian</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Return Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="transactionsTableBody">
+                            <tr>
+                                <td colspan="8">Loading transactions...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/transactions.js"></script>
+</body>
+</html>

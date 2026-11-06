@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Reports</title>
+    <link rel="stylesheet" href="css/reports.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2><i class="fas fa-book-open"></i> LibraryMS</h2>
+
+    <nav>
+        <a href="index.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="books.html"><i class="fas fa-book"></i> Books</a>
+        <a href="members.html"><i class="fas fa-users"></i> Members</a>
+        <a href="issue-books.html"><i class="fas fa-book-reader"></i> Issue Books</a>
+        <a href="return-books.html"><i class="fas fa-undo"></i> Return Books</a>
+        <a href="transactions.html"><i class="fas fa-exchange-alt"></i> Transactions</a>
+        <a href="reports.html" class="active"><i class="fas fa-file-alt"></i> Reports</a>
+    </nav>
+</div>
+
+<main class="main-content">
+
+    <header class="topbar">
+        <div>
+            <h1>Library Reports</h1>
+            <p>View library performance and borrowing statistics.</p>
+        </div>
+
+        <button id="refreshButton" class="refresh-btn">
+            <i class="fas fa-sync-alt"></i> Refresh Reports
+        </button>
+    </header>
+
+    <p id="message" class="message"></p>
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon blue"><i class="fas fa-book"></i></div>
+            <div>
+                <p>Total Book Titles</p>
+                <h2 id="totalTitles">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon purple"><i class="fas fa-copy"></i></div>
+            <div>
+                <p>Total Book Copies</p>
+                <h2 id="totalCopies">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon green"><i class="fas fa-users"></i></div>
+            <div>
+                <p>Total Members</p>
+                <h2 id="totalMembers">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon orange"><i class="fas fa-book-reader"></i></div>
+            <div>
+                <p>Currently Issued</p>
+                <h2 id="currentlyIssued">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon red"><i class="fas fa-exclamation-circle"></i></div>
+            <div>
+                <p>Overdue Books</p>
+                <h2 id="overdueBooks">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon teal"><i class="fas fa-check-circle"></i></div>
+            <div>
+                <p>Available Copies</p>
+                <h2 id="availableCopies">0</h2>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="report-section">
+        <div class="section-heading">
+            <div>
+                <h2>Category-wise Book Report</h2>
+                <p>Distribution of books across categories.</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Total Titles</th>
+                        <th>Total Copies</th>
+                        <th>Available Copies</th>
+                    </tr>
+                </thead>
+                <tbody id="categoryTable">
+                    <tr><td colspan="4">Loading report...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="report-section">
+        <div class="section-heading">
+            <div>
+                <h2>Overdue Books Report</h2>
+                <p>Books that have not been returned by their due date.</p>
+            </div>
+            <span id="overdueCount" class="count-label">0 overdue</span>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue ID</th>
+                        <th>Book</th>
+                        <th>Member</th>
+                        <th>Phone</th>
+                        <th>Due Date</th>
+                        <th>Days Overdue</th>
+                    </tr>
+                </thead>
+                <tbody id="overdueTable">
+                    <tr><td colspan="6">Loading report...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="report-section">
+        <div class="section-heading">
+            <div>
+                <h2>Most Borrowed Books</h2>
+                <p>Books ranked by the number of times they were issued.</p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Times Issued</th>
+                    </tr>
+                </thead>
+                <tbody id="popularBooksTable">
+                    <tr><td colspan="5">Loading report...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="js/reports.js"></script>
+</body>
+</html>
